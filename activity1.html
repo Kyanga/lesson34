@@ -19,8 +19,19 @@
             font-size:15px;
             cursor:pointer;
         }
+        .btnc{
+            background-color: red;
+            color: white;
+        }
+        .btne{
+            background-color: red;
+            color:white;
+        }
         .sreen{
             padding:6px;
+            width:200px;
+        }
+
         }
         .btn:hover{
             background-color: grey;
@@ -28,7 +39,7 @@
         }
     </style>
     <div class="main">
-        <form>
+        <form name="form">
             <input type="text" name="screen" realdonly class="sreen">
             <div class="row1">
                 <button class="btn" type="button" onclick="fetch(this)" value="9">9</button>
@@ -49,12 +60,23 @@
                 <button class="btn" type="button" onclick="fetch(this)" value="/">/</button>
             </div>
             <div class="row1">
-                <button class="btn" type="button" onclick="fetch(this)">c</button>
+                <button class="btn btnc" type="button" onclick="Clear()">C</button>
                 <button class="btn" type="button" onclick="fetch(this)" value="0">0</button>
-                <button class="btn" type="button" onclick="fetch(this)" value="=">=</button>
+                <button class="btn btne" type="button" onclick="eva()" value="=">=</button>
                 <button class="btn" type="button" onclick="fetch(this)" value="*">*</button>
             </div>
         </form>
     </div>
+    <script>
+        function fetch (e){
+            form.screen.value+=e.value;
+        }
+        function Clear(){
+            form.screen.value=null;
+        }
+        function eva(){
+            form.screen.value=eval(form.screen.value);
+        }
+    </script>
 </body>
 </html>
